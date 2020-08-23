@@ -70,11 +70,12 @@ client.on('ready', async => {
 				}
 		    });
 	    });
-	}, 1000);
+	}, 10000);
 });
 
 async function scrambleGroup(guildID, msg) {
 	crew = await keyv.get(guildID);
+	if (crew == null) return;
 	crew.forEach((pilotID) => { scramblePilot(pilotID, msg); });
 }
 
