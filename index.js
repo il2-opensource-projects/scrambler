@@ -50,7 +50,7 @@ client.on('ready', async => {
 	        guild.channels.cache.map(async c => {
 				if (c.type === 'voice') {
 					previousWarn = await keyv.get(c.id);
-					if (c.members.size > 2) {
+					if (c.members.size > 1) {
 						// Channel's state has changed: warn the players
 						if (previousWarn == '' || previousWarn == null) {
 							previousWarn = new Date(previousWarn);
